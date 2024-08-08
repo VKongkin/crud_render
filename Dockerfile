@@ -19,7 +19,8 @@ FROM eclipse-temurin:17-jdk-alpine
 WORKDIR /app
 
 # Copy the built JAR file from the build stage
-COPY --from=build /app/target/*.jar CRUD-0.0.1-SNAPSHOT.jar
+COPY --from=build /target/CRUD-0.0.1-SNAPSHOT.jar CRUD.jar
 
-ENTRYPOINT ["java", "-jar", "app/CRUD-0.0.1-SNAPSHOT.jar"]
+EXPOSE 8080
+ENTRYPOINT ["java", "-jar", "CRUD.jar"]
 
