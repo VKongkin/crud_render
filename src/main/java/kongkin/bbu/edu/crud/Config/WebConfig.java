@@ -16,7 +16,7 @@ public class WebConfig implements WebMvcConfigurer{
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("https://first-react-spring.vercel.app/")
+                        .allowedOrigins("https://first-react-spring.vercel.app")
                         .allowedMethods(HttpMethod.GET.name(),
                                 HttpMethod.POST.name(),
                                 HttpMethod.DELETE.name())
