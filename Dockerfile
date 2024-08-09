@@ -1,7 +1,7 @@
-#FROM eclipse-temurin:17-jdk-alpine as build
-FROM maven:3.9.6-openjdk-17 AS build
+FROM eclipse-temurin:17-jdk-alpine as build
+#FROM maven:3.9.6-openjdk-17 AS build
 WORKDIR /app
-COPY . /app/
+#COPY . /app/
 RUN mvn clean package
 # Copy the Maven wrapper and project files
 #COPY mvnw pom.xml ./
@@ -15,8 +15,8 @@ RUN mvn clean package
 #RUN ./mvnw clean package -DskipTests
 
 # Use a smaller base image to run the application
-#FROM eclipse-temurin:17-jdk-alpine
-FROM openjdk:17-alpine
+FROM eclipse-temurin:17-jdk-alpine
+#FROM openjdk:17-alpine
 WORKDIR /app
 
 # Copy the built JAR file from the build stage to the final image
