@@ -1,5 +1,6 @@
 package kongkin.bbu.edu.crud.controller;
 
+import kongkin.bbu.edu.crud.Config.WebConfig;
 import kongkin.bbu.edu.crud.models.Student;
 import kongkin.bbu.edu.crud.models.service.StudentService;
 import lombok.RequiredArgsConstructor;
@@ -15,7 +16,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("/api")
 @Slf4j
-public class StudentController extends webConfig{
+public class StudentController extends WebConfig {
     private final StudentService studentService;
 
     @GetMapping("/students")
