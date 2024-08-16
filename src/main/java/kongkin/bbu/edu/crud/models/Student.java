@@ -16,4 +16,5 @@ public class Student {
     private String DOB;
     private String Address;
     private String Status;
+    private String imagePath;
 }
