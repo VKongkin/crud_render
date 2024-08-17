@@ -86,6 +86,6 @@ public class StudentController extends WebConfig {
         }
 
         studentService.createWithFile(student, file,finalFilename);
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(student,HttpStatus.OK);
     }
 }
