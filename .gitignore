@@ -28,7 +28,6 @@ target/
 build/
 !**/src/main/**/build/
 !**/src/main/**/node/
-!**/src/main/**/node_modules/
 !**/src/main/**/.env
 !**/src/main/**/dist/
 !**/src/test/**/build/
