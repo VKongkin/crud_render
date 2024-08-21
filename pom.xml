@@ -145,7 +145,7 @@
                 </executions>
 
                 <configuration>
-                    <nodeVersion>v18.20.4</nodeVersion>
+                    <nodeVersion>v18.18.0</nodeVersion>
                     <workingDirectory>src/main/front-end-react</workingDirectory>
                 </configuration>
             </plugin>
