@@ -4,7 +4,7 @@ FROM node:14-alpine AS frontend-build
 WORKDIR /app/src/main/react-spring
 
 # Copy the package.json and install dependencies
-COPY src/main/react-spring/package.json ./
+COPY ./src/main/react-spring/package.json ./
 RUN npm install
 
 # Copy the rest of the React app source code and build it
