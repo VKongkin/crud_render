@@ -159,17 +159,17 @@ const StudentList = () => {
                             <td>{id}</td>
                             <td>{name}</td>
                             <td>
-                            {/* <img 
-                                src={`https://crud-render-h6q5.onrender.com/api/sharepoint/image/${student.imagePath}`} 
+                             <img
+                                src={`/api/sharepoint/image/${imagePath}`}
                                 // src={`https://graph.microsoft.com/v1.0/sites/${SITE_ID}/drives/${DRIVE_ID}/root:/Shared Documents/images/${student.imagePath}:/content`}
-                                alt={student.name} 
+                                alt={name}
                                 style={{ width: '100px', height: 'auto' }} // Adjust size as needed
-                            /> */}
-                            {fileContent ? (
-                                    <img src={URL.createObjectURL(imagePath)} alt="File content" />
-                                ) : (
-                                    "Loading..."
-                                )}
+                            />
+                            {/*{fileContent ? (*/}
+                            {/*        <img src={URL.createObjectURL(imagePath)} alt="File content" />*/}
+                            {/*    ) : (*/}
+                            {/*        "Loading..."*/}
+                            {/*    )}*/}
                             </td>
                             <td>{address}</td>
                             <td>{dob}</td>
