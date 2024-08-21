@@ -146,7 +146,7 @@
 
                 <configuration>
                     <nodeVersion>v18.20.4</nodeVersion>
-                    <workingDirectory>src/main/react-spring</workingDirectory>
+                    <workingDirectory>src/main/front-end-react</workingDirectory>
                 </configuration>
             </plugin>
 
@@ -165,7 +165,7 @@
                             <outputDirectory>target/classes/static</outputDirectory>
                             <resources>
                                 <resource>
-                                    <directory>src/main/react-spring/dist</directory>
+                                    <directory>src/main/front-end-react/dist</directory>
                                     <filtering>true</filtering>
                                 </resource>
                             </resources>
