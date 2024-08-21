@@ -26,9 +26,5 @@ public class WebConfig implements WebMvcConfigurer {
         };
     }
 
-    @RequestMapping(value = "/{path:[^\\.]*}")
-    public String redirect() {
-        // Forward all non-file routes to the index.html
-        return "forward:/index.html";
-    }
+
 }
