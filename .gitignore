@@ -34,6 +34,7 @@ build/
 # Keep the exclusion of node_modules (don't commit them)
 node_modules/
 
+
 ### VS Code ###
 .vscode/
 
