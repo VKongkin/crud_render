@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -23,5 +24,11 @@ public class WebConfig implements WebMvcConfigurer {
                                 HttpHeaders.AUTHORIZATION);
             }
         };
+    }
+
+    @RequestMapping(value = "/{path:[^\\.]*}")
+    public String redirect() {
+        // Forward all non-file routes to the index.html
+        return "forward:/index.html";
     }
 }
