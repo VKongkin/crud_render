@@ -1,4 +1,18 @@
-FROM eclipse-temurin:17-jdk-alpine as build
+# Stage 1: Build the frontend
+FROM node:14-alpine AS frontend-build
+
+WORKDIR /app/src/main/react-spring
+
+# Copy the package.json and install dependencies
+COPY src/main/react-spring/package.json ./
+RUN npm install
+
+# Copy the rest of the React app source code and build it
+COPY src/main/react-spring ./
+RUN npm run build
+
+# Stage 2: Build the Spring Boot application
+FROM eclipse-temurin:17-jdk-alpine AS backend-build
 
 WORKDIR /app
 
@@ -7,19 +21,22 @@ COPY mvnw pom.xml ./
 COPY .mvn .mvn
 COPY src src
 
+# Copy the built React frontend to the Spring Boot resources folder
+COPY --from=frontend-build /app/src/main/react-spring/build/ /app/src/main/resources/static/
+
 # Give execute permissions to the Maven wrapper
 RUN chmod +x ./mvnw
 
-# Build the application
+# Build the Spring Boot application
 RUN ./mvnw clean package -DskipTests
 
-# Use a smaller base image to run the application
+# Stage 3: Run the application using a smaller base image
 FROM eclipse-temurin:17-jdk-alpine
 
 WORKDIR /app
 
 # Copy the built JAR file from the build stage to the final image
-COPY --from=build /app/target/*.jar app.jar
+COPY --from=backend-build /app/target/*.jar app.jar
 
 # Expose the application port
 EXPOSE 8080
