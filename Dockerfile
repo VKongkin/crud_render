@@ -8,7 +8,7 @@ COPY ./src/main/front-end-react/package.json ./
 RUN npm install
 
 # Copy the rest of the React app source code and build it
-COPY src/main/react-spring ./
+COPY src/main/front-end-react ./
 RUN npm run build
 
 # Stage 2: Build the Spring Boot application
